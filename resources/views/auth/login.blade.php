@@ -1,9 +1,19 @@
 <x-logout-layout>
 
   <!-- 適切なURLを入力してください -->
-  {!! Form::open(['url' => '〇〇']) !!}
+  {!! Form::open(['url' => 'login']) !!}
 
   <p>AtlasSNSへようこそ</p>
+
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+  @endif
 
   {{ Form::label('email') }}
   {{ Form::text('email',null,['class' => 'input']) }}
