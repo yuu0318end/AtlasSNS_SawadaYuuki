@@ -26,6 +26,7 @@ require __DIR__ . '/auth.php';
 Route::middleware('auth')->group(function () {
 
   Route::get('top', [PostsController::class, 'index']);
+  Route::post('top', [FollowsController::class, 'Counter']);
   Route::post('postCreate', [PostsController::class, 'postCreate']);
   Route::post('postUpdate', [PostsController::class, 'postUpdate'])->name('postUpdate');
   Route::get('/postDelete/{id}', [PostsController::class, 'postDelete'])->name('postDelete');
@@ -35,9 +36,13 @@ Route::middleware('auth')->group(function () {
   Route::get('profile', [ProfileController::class, 'profile']);
 
   Route::get('search', [UsersController::class, 'search']);
-  Route::get('index', [UsersController::class, 'index']);
 
   Route::get('follow-list', [FollowsController::class, 'followList']);
   Route::get('follower-list', [FollowsController::class, 'followerList']);
+
+  Route::get('/following/{id}', [FollowsController::class, 'following'])->name('following');
+  Route::get('/unFollowing/{id}', [FollowsController::class, 'unFollowing'])->name('unFollowing');
+
+  Route::get('Counter', [FollowsController::class, 'Counter']);
 
 });

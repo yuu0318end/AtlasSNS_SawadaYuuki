@@ -20,16 +20,16 @@
 
 <div class="post_read">
 @foreach($posts as $post)
-<tr>
-  <td><img class="icon-logo" src="{{ asset('images/' . $post->user->icon_image) }}"></td>
-  <td>{{ $post->user->username }}</td>
-  <td>{{ $post->post }}</td>
-  <td>{{ $post->created_at }}</td>
+<ul>
+  <li><img class="icon-logo" src="{{ asset('images/' . $post->user->icon_image) }}"></li>
+  <li>{{ $post->user->username }}</li>
+  <li>{{ $post->post }}</li>
+  <li>{{ $post->created_at }}</li>
     <div class="btn_read_container">
       <a href="#" class="modal_open" post="{{$post->post}}" post_id="{{$post->id}}"><img class="btn_update" src="{{ asset('images/edit.png') }}"></a>
       <a href="{{ route('postDelete',$post->id) }}" onclick="return confirm('この投稿をを削除します。よろしいでしょうか？')"><img class="btn_delete" src="{{ asset('images/trash.png') }}"></a>
     </div>
-</tr>
+</ul>
 @endforeach
 </div>
 
@@ -45,5 +45,4 @@
     </div>
   </div>
 </div>
-
 </x-login-layout>

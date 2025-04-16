@@ -32,19 +32,19 @@
   <!-- Page Content -->
   <div id="row">
     <div id="container">
-      {{ $slot }}
+    {{ $slot }}
     </div>
     <div id="side-bar">
       <div id="confirm">
         <p>{{ Auth::user()->username }}さんの</p>
         <div>
           <p>フォロー数</p>
-          <p>〇〇名</p>
+          <p>名</p>
         </div>
         <p class="btn"><a href="follow-list">フォローリスト</a></p>
         <div>
           <p>フォロワー数</p>
-          <p>〇〇名</p>
+          <p>名</p>
         </div>
         <p class="btn"><a href="follower-list">フォロワーリスト</a></p>
       </div>
@@ -55,7 +55,7 @@
   </footer>
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="{{ asset('js/script.js') }}"></script>
-  <script src="JavaScriptファイルのURL"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </body>
 
 </html>
