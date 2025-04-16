@@ -20,7 +20,7 @@
     <li>{{ $user->username }}</li>
   </ul>
   <div class="btn_follow_container">
-    @if($check->where('followed_id', $user->id))
+    @if($check->contains($user->id))
     <a class="btn_unfollow" href="{{ route('unFollowing',$user->id) }}">フォロー解除</a>
     @else
     <a class="btn_follow" href="{{ route('following',$user->id) }}">フォローする</a>

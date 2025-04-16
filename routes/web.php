@@ -43,6 +43,4 @@ Route::middleware('auth')->group(function () {
   Route::get('/following/{id}', [FollowsController::class, 'following'])->name('following');
   Route::get('/unFollowing/{id}', [FollowsController::class, 'unFollowing'])->name('unFollowing');
 
-  Route::get('Counter', [FollowsController::class, 'Counter']);
-
 });

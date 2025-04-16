@@ -13,7 +13,7 @@ class UsersController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->input('keyword');
-        $check = Follow::where('following_id', Auth::id());
+        $check = Follow::where('following_id', Auth::id())->pluck('followed_id');
 
         if(!empty($keyword)){
             $users = User::where('username','like','%'.$keyword.'%')->where("id" , "!=" , Auth::user()->id)->get();

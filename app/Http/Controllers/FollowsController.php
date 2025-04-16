@@ -28,9 +28,9 @@ class FollowsController extends Controller
             $follow->following_id = Auth::id();
             $follow->followed_id = $request->id;
             $follow->save();
-            return back();
+            return redirect('/search');
         }else{
-            return back();
+            return redirect('/search');
         };
     }
 
@@ -38,19 +38,7 @@ class FollowsController extends Controller
     public function unFollowing(Request $request)
     {
         $unFollowing = Follow::where('following_id', Auth::id())->where('followed_id', $request->id)->delete();
-        return back();
+        return redirect('/search');
     }
-
-    //フォロー数、フォロワー数カウント
-    public function Counter()
-    {
-        $followCount = Follow::where('following_id', Auth::id())->count();
-        $followerCount = Follow::where('followed_id', Auth::id())->count();
-        return view('layouts.login',[
-            'followCount'=>$followCount,
-            'followerCount'=>$followerCount,
-        ]);
-    }
-
 
 }
