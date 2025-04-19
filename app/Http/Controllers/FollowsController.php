@@ -12,10 +12,22 @@ class FollowsController extends Controller
 {
     //
     public function followList(){
-        return view('follows.followList');
+        $follow_user = Follow::where('following_id', Auth::id())->pluck('followed_id');
+        $follow_icon = User::whereIn('id',$follow_user)->get();
+        $follow_post = Post::whereIn('user_id',$follow_user)->latest()->get();
+            return view('follows.followList',[
+            'follow_icon'=>$follow_icon,
+            'follow_post'=>$follow_post,
+        ]);
     }
     public function followerList(){
-        return view('follows.followerList');
+        $follow_user = Follow::where('followed_id', Auth::id())->pluck('following_id');
+        $follow_icon = User::whereIn('id',$follow_user)->get();
+        $follow_post = Post::whereIn('user_id',$follow_user)->latest()->get();
+            return view('follows.followerList',[
+            'follow_icon'=>$follow_icon,
+            'follow_post'=>$follow_post,
+        ]);
     }
 
     //フォローする

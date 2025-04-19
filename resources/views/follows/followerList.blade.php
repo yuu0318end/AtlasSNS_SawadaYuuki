@@ -1,7 +1,19 @@
 <x-login-layout>
 
+<span class="list_title">フォロワーリスト</span>
+@foreach($follow_icon as $follow_icons)
+<a href="{{ route('anotherProfile',['id' => $follow_icons->id]) }}"><img class="follow_icon" src="{{asset('images/' . $follow_icons->icon_image)}}"></a>
+@endforeach
 
-  <h2>機能を実装していきましょう。</h2>
-  <p>フォロワーリスト</p>
+<div class="follow_list_container">
+@foreach($follow_post as $follow_posts)
+<ul>
+  <li><a href="{{ route('anotherProfile',$follow_posts->user->id) }}"><img class="follow_icon" src="{{asset('images/' . $follow_posts->user->icon_image)}}"></a></li>
+  <li>{{$follow_posts->user->username}}</li>
+  <li>{{$follow_posts->post}}</li>
+  <li>{{$follow_posts->created_at->format('Y-m-d H:i') }}</li>
+</ul>
+@endforeach
+</div>
 
 </x-login-layout>

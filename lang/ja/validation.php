@@ -121,6 +121,11 @@ return [
         'username' => 'ユーザー名',
         'email' => 'メールアドレス',
         'password' => 'パスワード',
+        'upUsername' => 'ユーザー名',
+        'upMail' => 'メールアドレス',
+        'upPassword' => 'パスワード',
+        'upBio' => '自己紹介文',
+        'upIcon' => 'アイコン画像',
     ],
 
 ];

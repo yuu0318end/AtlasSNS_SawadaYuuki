@@ -36,16 +36,25 @@ class PostsController extends Controller
     {
         $id = $request->input('id');
         $up_post = $request->input('upPost');
+        $updateId = Post::where('id',$id)->first();
 
-        Post::where('id', $id)->update([
-            'post' => $up_post,
-        ]);
+        if($updateId->user_id === Auth::id()){
+        Post::where('id', $id)->update(['post' => $up_post,]);
+        }else{
+            abort(403, 'この投稿を編集する権限がありません。');
+        }
         return redirect('/top');
     }
 
     public function postDelete($id)
     {
-        Post::where('id', $id)->delete();
+        $deleteId = Post::where('id', $id)->first();
+        if($deleteId->user_id === Auth::id()){
+            $deleteId->delete();
+        }else {
+            abort(403, 'この投稿を削除する権限がありません。');
+        }
+
         return redirect('/top');
     }
 
