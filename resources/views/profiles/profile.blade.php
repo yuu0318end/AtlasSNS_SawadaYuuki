@@ -13,7 +13,6 @@
 <img src="">
   <form class="profile_container" action="{{ route('profileUpdate') }}" method="post" enctype="multipart/form-data">
     @csrf
-    <input type="hidden" name="id" value="{{ Auth::user()->id }}">
     <div class="profile_items">
       <label>ユーザー名</label>
       <input type="text" name="upUsername" value="{{ Auth::user()->username }}">

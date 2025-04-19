@@ -29,7 +29,7 @@ class ProfileController extends Controller
         'upIcon' => 'image|mimes:jpg,png,bmp,gif,svg',
         ]);
 
-        $id = $request->input('id');
+        $id = Auth::id();
         $up_username = $request->input('upUsername');
         $up_mail = $request->input('upMail');
         $up_password = $request->input('upPassword');
@@ -45,7 +45,7 @@ class ProfileController extends Controller
 
         if ($request->hasFile('upIcon')) {
             $up_icon = $request->file('upIcon')->getClientOriginalName();
-            User::where('id',$id)->update(['icon_image',$up_icon]);
+            User::where('id',$id)->update(['icon_image' => $up_icon]);
         }
         return redirect('/top');
     }
