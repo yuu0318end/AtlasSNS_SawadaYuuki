@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   <link rel="stylesheet" href="{{ asset('css/style.css') }} ">
+
   <!--スマホ,タブレット対応-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -35,20 +36,20 @@
       {{ $slot }}
     </div>
     <div id="side-bar">
-      <div id="confirm">
-        <p>{{ Auth::user()->username }}さんの</p>
-        <div>
-          <p>フォロー数</p>
-          <p>{{Auth::user()->following->count()}}名</p>
+      <div class="confirm">
+        <p class="sidebar_username">{{ Auth::user()->username }}さんの</p>
+        <div class="sidebar_label">
+          <p class="sidebar_item1">フォロー数</p>
+          <p class="sidebar_item2">{{Auth::user()->following->count()}}名</p>
         </div>
-        <p class="btn"><a href="{{route('follow-list')}}">フォローリスト</a></p>
-        <div>
-          <p>フォロワー数</p>
-          <p>{{Auth::user()->followed->count()}}名</p>
+        <p class="followJump"><a class="btn btn-primary" href="{{route('follow-list')}}">フォローリスト</a></p>
+        <div class="sidebar_label">
+          <p class="sidebar_item1">フォロワー数</p>
+          <p class="sidebar_item2">{{Auth::user()->followed->count()}}名</p>
         </div>
-        <p class="btn"><a href="{{route('follower-list')}}">フォロワーリスト</a></p>
+        <p class="followerJump"><a class="btn btn-primary" href="{{route('follower-list')}}">フォロワーリスト</a></p>
       </div>
-      <p class="btn"><a href="{{route('search')}}">ユーザー検索</a></p>
+      <p class="searchJump"><a class="btn btn-primary" href="{{route('search')}}">ユーザー検索</a></p>
     </div>
   </div>
   <footer>

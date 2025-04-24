@@ -15,7 +15,7 @@
                     </ul>
                 </nav>
                 <div class="icon">
-                    <a href="{{route('profile')}}"><img class="icon-logo" src="{{ asset('images/' . Auth::user()->icon_image) }}"></a>
+                    <a href="{{route('profile')}}"><img class="header_icon" src="{{ asset('images/' . Auth::user()->icon_image) }}"></a>
                 </div>
             </div>
         </div>

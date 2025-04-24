@@ -2,9 +2,104 @@
 
 html{
     height: 100%;
+    font-size: 16px;
 }
 
 body{
-    height: 100%;
-    background: #186AC9;
+    background-attachment: fixed !important;
+    background:linear-gradient(180deg, rgba(2, 129, 220, 1) 50%, rgba(255, 250, 50, 1));
+    color: #ffffff;
+    font-family: 'Noto Sans',sans-serif;
+}
+
+header{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+h1{
+    margin: 0;
+}
+.title_logo{
+    width: 130px;
+    height: 50px;
+    margin-top: 50px;
+
+}
+.subtitle{
+    font-size:2.3rem;
+    font-weight: bold;
+}
+
+/* ログイン画面 */
+
+.form_container{
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 50%;
+    margin: 0 auto;
+    align-items: center;
+    border-radius: 10px;
+    background-color:rgba(0, 0, 0, 0.17)
+}
+.welcome {
+    margin: 30px 0px 40px 0px;
+    font-size: 1.2rem;
+}
+.form_items{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+.input{
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: none;
+    height: 35px;
+    color: #000000;
+}
+.label{
+    display: block;
+    text-align:left;
+    font-weight: 1;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+.btn_login{
+    margin-bottom: 40px;
+    width: 40%;
+    margin-left: auto;
+}
+
+/* 新規登録 */
+
+.register_p{
+    margin-bottom: 30px;
+}
+.register_a{
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+/* add */
+.username_add{
+    font-size: 1.1rem;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+.welcome_add{
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+.text_add{
+    font-size: 1rem;
+}
+.back_add{
+    color: #ffffff;
+}
+.btn_add {
+    margin-bottom: 40px;
+    width: 40%;
 }

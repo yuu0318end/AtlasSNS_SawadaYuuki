@@ -37,7 +37,7 @@
       <label>アイコン画像</label>
       <input type="file" name="upIcon">
     </div>
-    <button class="btn_profile" type="submit">更新</button>
+    <button class="btn btn-danger" type="submit">更新</button>
   </form>
 
 </x-login-layout>

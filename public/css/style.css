@@ -1,13 +1,20 @@
 @charset "utf-8";
 
-html {}
+html {
+    color: #000;
+    font-size: 16px;
+}
 
-body {}
+body {
+    margin: 0;
+    padding: 0;
+}
 
 /* header */
 header {
     background: #186AC9;
-    height: 6vw;
+    height: 90px;
+    position: relative;
 }
 
 
@@ -18,7 +25,7 @@ header {
 .header-logo {
     width: 110px;
     height: 40px;
-    margin: 25px 25px;
+    margin: 25px;
 }
 
 #menu-container {
@@ -31,7 +38,7 @@ header {
 
 #menu-name {
     color: #fff;
-    font-size: 20px;
+    font-size: 1.2rem;
 }
 
 #menu-name p {
@@ -128,7 +135,7 @@ header {
     z-index: 3;
 }
 
-.icon-logo {
+.header_icon {
     width: 50px;
     height: 50px;
     margin-right: 30px;
@@ -136,13 +143,9 @@ header {
 
 /* main content */
 button {
-    /* 背景色を無色に */
     background: transparent;
-    /* 枠線を消す */
     border: none;
-    /* クリックした際に枠線をnone消す */
     outline: none;
-    /* 影を消す */
     box-shadow: none;
 }
 
@@ -154,17 +157,54 @@ button {
 #container {
     flex: 0 0 80%;
 }
-
+.btn{
+    width: 150px;
+}
+.icon-logo{
+    width: 50px;
+    height: 50px;
+}
+/* サイドバー */
 #side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
     z-index: 2;
+}
+.confirm{
+    border-bottom:1px solid #727272;
+}
+.sidebar_username{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.sidebar_label{
+    display: flex;
+    margin-left: 20px;
+    position: relative;
+}
+.sidebar_item1{}
+.sidebar_item2{
+    position: absolute;
+    right: 50%;
+}
+.followJump{
+    text-align: right;
+    margin-bottom: 10%;
+}
+.followerJump{
+    text-align: right;
+    margin-bottom: 10%;
+}
+.searchJump{
+    text-align:center;
+    margin-top: 25px;
 }
 
 /* post */
 .container_post {
     padding-top: 30px;
     padding-left: 80px;
+    border-bottom: 7px solid #d3d3d3;
 }
 
 .text_post {
@@ -173,6 +213,7 @@ button {
     background-color: transparent;
     padding-bottom: 70px;
     width: 600px;
+    margin-left: 15px;
 }
 
 .text_post::placeholder {
@@ -196,19 +237,41 @@ button {
 .post_read ul {
     display: flex;
     padding: 10px;
+    border-bottom: 1px solid #727272;
+    position: relative;
+    min-height: 110px;
 }
 
 .post_read ul li {
-    padding: 10px;
+    padding: 5px;
+}
+.post_icon {
+    margin-left: 100px;
+    margin-right: 0;
+}
+.post_wrapper {}
+.post_username {
+    margin-top: 5px;
+}
+
+.post_content {}
+
+.post_time {
+    position: absolute;
+    top: 5px;
+    right: 20px;
 }
 
 .btn_read_container {
     display: flex;
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
 }
 
 .btn_update {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }
 
 .btn_update:hover {
@@ -217,8 +280,8 @@ button {
 
 
 .btn_delete {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }
 
 .btn_delete:hover {
@@ -322,22 +385,20 @@ button {
 }
 
 /* フォロー・フォロワーリスト */
-.list_title {
-    font-size: 20px;
-}
-
-.follow_icon {
-    width: 40px;
-    height: 40px;
-}
-
-.follow_list_container ul {
-    display: flex;
+.followList {
+    border-bottom: 7px solid #d3d3d3;
     padding: 20px;
+    display: flex;
+    align-items: baseline;
 }
-
-.follow_list_container ul li {
-    padding: 10px;
+.list_title {
+    font-size: 1.2rem;
+    margin: 0 50px;
+}
+.icon_grid{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
 }
 
 /* profile */
@@ -357,4 +418,42 @@ button {
     height: 30px;
     background-color: #ff0000;
 
+}
+/* anotherProfile */
+.anotherProfile_container{
+    display: flex;
+    border-bottom: 7px solid #d3d3d3;
+    padding: 40px;
+    position: relative;
+}
+.anotherProfile_icon{
+    width: 50px;
+    height: 50px;
+    margin-left: 60px;
+}
+.anotherProfile_wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.anotherProfile_username{
+    display: flex;
+    margin-bottom: 15px;
+}
+.anotherProfile_bio{
+    display: flex;
+    margin-bottom: 0;
+}
+.content_label{
+    margin: 0;
+    margin-left:20px;
+    font-size: 1.2rem;
+}
+.content_text{
+    margin-left: 70px;
+    font-size: 1.2rem;
+}
+.another_btn{
+    position: absolute;
+    right: 10px;
+    bottom: 30px;
 }

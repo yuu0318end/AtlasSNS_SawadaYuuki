@@ -21,9 +21,9 @@
   </ul>
   <div class="btn_follow_container">
     @if($check->contains($user->id))
-    <a class="btn_unfollow" href="{{ route('unFollowing',$user->id) }}">フォロー解除</a>
+    <a class="btn btn-danger" href="{{ route('unFollowing',$user->id) }}">フォロー解除</a>
     @else
-    <a class="btn_follow" href="{{ route('following',$user->id) }}">フォローする</a>
+    <a class="btn btn-info" href="{{ route('following',$user->id) }}">フォローする</a>
     @endif
   </div>
 </div>
