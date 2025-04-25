@@ -14,6 +14,8 @@
   <div class="btn_follow_container">
     @if($check->contains($userId->id))
     <a class="another_btn btn btn-danger" href="{{ route('profileUnFollowing',$userId->id) }}">フォロー解除</a>
+    @elseif($userId->id==Auth::user()->id)
+    <p></p>
     @else
     <a class="another_btn btn btn-info" href="{{ route('profileFollowing',$userId->id) }}">フォローする</a>
     @endif

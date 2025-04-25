@@ -404,23 +404,58 @@ button {
 }
 
 /* profile */
-.profile_container {
+.profile_container{
+    display: flex;
+    justify-content: center;
+    align-items:baseline;
+    margin-top: 50px;
+    margin-left: 50px;
+
+}
+.profile_wrapper {
     display: flex;
     flex-flow: column;
-    padding: 30px;
 }
 
 .profile_items {
     display: flex;
-    padding: 15px;
+    justify-content: space-between;
+    padding: 25px;
+}
+.profile_label{
+    font-size: 1.1rem;
+    font-weight: 100;
+    margin-left: 20px;
+}
+.profile_input{
+    width: 400px;
+    height: 35px;
+    margin-left: 150px;
+    background-color: #e6e6e6;
+    border: 1px solid;
+}
+.profile_input_image{
+    width: 400px;
+    height: 100px;
+    background-color: #e6e6e6;
+    color: #e6e6e6;
+    border: 1px solid #727272;
+}
+.profile_input_image::file-selector-button{
+    background-color: #fff;
+    color: #d3d3d3;
+    border: none;
+    font-size: 1.2rem;
+    width: 200px;
+    margin: 30px 90px;
+    cursor: pointer;
+}
+.profile_btn_container{
+    margin: 0 auto;
+    margin-top: 30px;
+
 }
 
-.btn_profile {
-    width: 100px;
-    height: 30px;
-    background-color: #ff0000;
-
-}
 /* anotherProfile */
 .anotherProfile_container{
     display: flex;

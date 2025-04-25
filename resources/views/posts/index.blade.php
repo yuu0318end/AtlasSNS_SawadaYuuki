@@ -21,7 +21,7 @@
 <div class="post_read">
 @foreach($posts as $post)
 <ul>
-  <li class="post_icon"><img class="icon-logo" src="{{ asset('images/' . $post->user->icon_image) }}"></li>
+  <li class="post_icon"><a href="{{ route('anotherProfile',$post->user->id) }}"><img class="icon-logo" src="{{ asset('images/' . $post->user->icon_image) }}"></a></li>
   <div class="post_wrapper">
     <li class="post_username">{{ $post->user->username }}</li>
     <li class="post_content">{{ $post->post }}</li>
