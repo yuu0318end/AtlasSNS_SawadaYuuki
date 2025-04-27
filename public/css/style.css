@@ -3,11 +3,13 @@
 html {
     color: #000;
     font-size: 16px;
+    height: 100%;
 }
 
 body {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 /* header */
@@ -97,6 +99,7 @@ header {
     opacity: 0;
     transition: .3s ease-in-out;
     transform: translateY(-30px);
+    pointer-events: none;
 
     ul {
         border-bottom: 1px solid #000;
@@ -132,7 +135,8 @@ header {
 .menu.is-open {
     opacity: 1;
     transform: translateY(0);
-    z-index: 3;
+    z-index: 2;
+    pointer-events: auto;
 }
 
 .header_icon {
@@ -152,6 +156,7 @@ button {
 #row {
     display: flex;
     flex-flow: row wrap;
+    height: 100%;
 }
 
 #container {
@@ -169,7 +174,6 @@ button {
 #side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
-    z-index: 2;
 }
 .confirm{
     border-bottom:1px solid #727272;
@@ -403,7 +407,7 @@ button {
     gap: 10px;
 }
 
-/* profile */
+/* プロフィール */
 .profile_container{
     display: flex;
     justify-content: center;
@@ -452,7 +456,8 @@ button {
 }
 .profile_btn_container{
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 30px ;
+    margin-bottom: 30px;
 
 }
 

@@ -23,17 +23,19 @@
 {{ Form::email('email',null,['class' => 'input']) }}
 
 {{ Form::label('password','パスワード',['class' => 'label']) }}
-{{ Form::text('password',null,['class' => 'input']) }}
+{{ Form::password('password',['class' => 'input']) }}
 
 {{ Form::label('password_confirmation','パスワード確認',['class' => 'label']) }}
-{{ Form::text('password_confirmation',null,['class' => 'input']) }}
+{{ Form::password('password_confirmation',['class' => 'input']) }}
 
 {{ Form::submit('新規登録', ['class' =>'btn_login btn btn-danger']) }}
 </div>
 <p class="register_p"><a class="register_a" href="login">ログイン画面へ戻る</a></p>
-</div>
 
 {!! Form::close() !!}
+
+<div class="space"></div>
+
 
 
 </x-logout-layout>

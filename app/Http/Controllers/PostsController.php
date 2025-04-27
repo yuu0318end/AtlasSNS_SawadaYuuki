@@ -13,8 +13,15 @@ class PostsController extends Controller
 
     public function index()
     {
-        $posts = Post::get();
-        return view('posts.index',['posts'=>$posts]);
+
+    $followUsersId = Auth::user()->following->pluck('id')->push(Auth::user()->id);
+    $followPost = Post::whereIn('user_id', $followUsersId)->latest()->get();
+    $followIcon = User::whereIn('id', $followUsersId)->get();
+
+    return view('posts.index', [
+        'follow_icon' => $followIcon,
+        'follow_post' => $followPost,
+    ]);
     }
 
     public function postCreate(Request $request)
@@ -36,12 +43,9 @@ class PostsController extends Controller
     {
         $id = $request->input('id');
         $up_post = $request->input('upPost');
-        $updateId = Post::where('id',$id)->first();
 
-        if($updateId->user_id === Auth::id()){
-        Post::where('id', $id)->update(['post' => $up_post,]);
-        }else{
-            abort(403, 'この投稿を編集する権限がありません。');
+        if(!empty($up_post)){
+        Post::where('id', $id)->update(['post' => $up_post]);
         }
         return redirect('/top');
     }
@@ -49,12 +53,7 @@ class PostsController extends Controller
     public function postDelete($id)
     {
         $deleteId = Post::where('id', $id)->first();
-        if($deleteId->user_id === Auth::id()){
-            $deleteId->delete();
-        }else {
-            abort(403, 'この投稿を削除する権限がありません。');
-        }
-
+        $deleteId->delete();
         return redirect('/top');
     }
 

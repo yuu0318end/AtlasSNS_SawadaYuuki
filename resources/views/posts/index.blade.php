@@ -19,18 +19,18 @@
 {!! Form::close() !!}
 
 <div class="post_read">
-@foreach($posts as $post)
+@foreach($follow_post as $follow_posts)
 <ul>
-  <li class="post_icon"><a href="{{ route('anotherProfile',$post->user->id) }}"><img class="icon-logo" src="{{ asset('images/' . $post->user->icon_image) }}"></a></li>
+  <li class="post_icon"><a href="{{ route('anotherProfile',$follow_posts->user->id) }}"><img class="icon-logo" src="{{asset('images/' . $follow_posts->user->icon_image)}}"></a></li>
   <div class="post_wrapper">
-    <li class="post_username">{{ $post->user->username }}</li>
-    <li class="post_content">{{ $post->post }}</li>
+  <li class="post_username">{{$follow_posts->user->username}}</li>
+  <li class="post_content">{{$follow_posts->post}}</li>
   </div>
-  <li class="post_time">{{ $post->created_at->format('Y-m-d H:i')  }}</li>
-    @if($post->user_id == Auth::user()->id)
+  <li class="post_time">{{$follow_posts->created_at->format('Y-m-d H:i') }}</li>
+    @if($follow_posts->user_id == Auth::user()->id)
     <div class="btn_read_container">
-      <a href="#" class="modal_open" post="{{$post->post}}" post_id="{{$post->id}}"><img class="btn_update" src="{{ asset('images/edit.png') }}"></a>
-      <a href="{{ route('postDelete',$post->id) }}" onclick="return confirm('この投稿をを削除します。よろしいでしょうか？')"><img class="btn_delete" src="{{ asset('images/trash.png') }}"></a>
+      <a href="#" class="modal_open" post="{{$follow_posts->post}}" post_id="{{$follow_posts->user->id}}"><img class="btn_update" src="{{ asset('images/edit.png') }}"></a>
+      <a href="{{ route('postDelete',$follow_posts->id) }}" onclick="return confirm('この投稿をを削除します。よろしいでしょうか？')"><img class="btn_delete" src="{{ asset('images/trash.png') }}"></a>
     </div>
     @endif
 </ul>
