@@ -29,7 +29,7 @@
   <li class="post_time">{{$follow_posts->created_at->format('Y-m-d H:i') }}</li>
     @if($follow_posts->user_id == Auth::user()->id)
     <div class="btn_read_container">
-      <a href="#" class="modal_open" post="{{$follow_posts->post}}" post_id="{{$follow_posts->user->id}}"><img class="btn_update" src="{{ asset('images/edit.png') }}"></a>
+      <a href="#" class="modal_open" post="{{$follow_posts->post}}" post_id="{{$follow_posts->id}}"><img class="btn_update" src="{{ asset('images/edit.png') }}"></a>
       <a href="{{ route('postDelete',$follow_posts->id) }}" onclick="return confirm('この投稿をを削除します。よろしいでしょうか？')"><img class="btn_delete" src="{{ asset('images/trash.png') }}"></a>
     </div>
     @endif
