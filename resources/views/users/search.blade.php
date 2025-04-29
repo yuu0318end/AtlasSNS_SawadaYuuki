@@ -16,7 +16,7 @@
 @foreach($users as $user)
 <div class="user_container">
   <ul>
-    <li><a href="{{ route('anotherProfile',$user->id) }}"><img class="icon-logo" src="{{ asset('images/' . $user->icon_image) }}"></a></li>
+    <li><a href="{{ route('anotherProfile',$user->id) }}"><img class="icon-logo" src="{{ asset('storage/images/' . $user->icon_image) }}"></a></li>
     <li class="search_username">{{ $user->username }}</li>
   </ul>
   <div class="btn_follow_container">

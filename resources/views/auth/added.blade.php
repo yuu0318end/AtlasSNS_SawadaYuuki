@@ -7,6 +7,6 @@
     <p class="text_add">ユーザー登録が完了しました。<br>早速ログインをしてみましょう！</p>
     <p></p>
 
-    <button class="btn_add btn btn-danger"><a class="back_add" href="login">ログイン画面へ</a></button>
+    <a class="btn_add btn btn-danger" href="login">ログイン画面へ</a>
   </div>
 </x-logout-layout>

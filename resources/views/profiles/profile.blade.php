@@ -12,7 +12,7 @@
 
 <div class="profile_container">
   <div>
-    <img class="icon-logo" src="{{ asset('images/' . Auth::user()->icon_image) }}">
+    <img class="icon-logo" src="{{ asset('storage/images/' . Auth::user()->icon_image) }}">
   </div>
     <form class="profile_wrapper" action="{{ route('profileUpdate') }}" method="post" enctype="multipart/form-data">
       @csrf

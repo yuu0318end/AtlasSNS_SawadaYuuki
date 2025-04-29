@@ -9,13 +9,13 @@
                 </div>
                 <nav class="menu">
                     <ul>
-                        <li><a class="menu-list" href="{{route('top')}}">HOME</a></li>
-                        <li><a class="menu-list" href="{{route('profile')}}">プロフィール編集</a></li>
-                        <li><a class="menu-list" href="{{ route('logout') }}">ログアウト</a></li>
+                        <a class="menu-list" href="{{route('top')}}"><li>HOME</li></a>
+                        <a class="menu-list" href="{{route('profile')}}"><li>プロフィール編集</li></a>
+                        <a class="menu-list" href="{{ route('logout') }}"><li>ログアウト</li></a>
                     </ul>
                 </nav>
                 <div class="icon">
-                    <a href="{{route('profile')}}"><img class="header_icon" src="{{ asset('images/' . Auth::user()->icon_image) }}"></a>
+                    <a href="{{route('profile')}}"><img class="header_icon" src="{{ asset('storage/images/' . Auth::user()->icon_image) }}"></a>
                 </div>
             </div>
         </div>

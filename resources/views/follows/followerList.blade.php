@@ -4,7 +4,7 @@
   <p class="list_title">フォロワーリスト</p>
     <div class="icon_grid">
     @foreach($follow_icon as $follow_icons)
-    <a href="{{ route('anotherProfile',['id' => $follow_icons->id]) }}"><img class="icon-logo" src="{{asset('images/' . $follow_icons->icon_image)}}"></a>
+    <a href="{{ route('anotherProfile',['id' => $follow_icons->id]) }}"><img class="icon-logo" src="{{asset('storage/images/' . $follow_icons->icon_image)}}"></a>
     @endforeach
     </div>
 </div>
@@ -12,7 +12,7 @@
 <div class="post_read">
 @foreach($follow_post as $follow_posts)
 <ul>
-  <li class="post_icon"><a href="{{ route('anotherProfile',$follow_posts->user->id) }}"><img class="icon-logo" src="{{asset('images/' . $follow_posts->user->icon_image)}}"></a></li>
+  <li class="post_icon"><a href="{{ route('anotherProfile',$follow_posts->user->id) }}"><img class="icon-logo" src="{{asset('storage/images/' . $follow_posts->user->icon_image)}}"></a></li>
   <div class="post_wrapper">
   <li class="post_username">{{$follow_posts->user->username}}</li>
   <li class="post_content">{{$follow_posts->post}}</li>

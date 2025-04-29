@@ -104,4 +104,5 @@ h1{
 .btn_add {
     margin-bottom: 40px;
     width: 40%;
+    text-decoration: none;
 }

@@ -44,8 +44,11 @@ class ProfileController extends Controller
         ]);
 
         if ($request->hasFile('upIcon')) {
-            $up_icon = $request->file('upIcon')->getClientOriginalName();
-            User::where('id',$id)->update(['icon_image' => $up_icon]);
+            $file = $request->file('upIcon');
+            $fileName = $file->getClientOriginalName();
+
+            $file->storeAs('public/images', $fileName);
+            User::where('id', $id)->update(['icon_image' => $fileName]);
         }
         return redirect('/top');
     }
