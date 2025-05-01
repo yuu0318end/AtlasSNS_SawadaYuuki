@@ -15,7 +15,11 @@
                     </ul>
                 </nav>
                 <div class="icon">
+                    @if(Auth::user()->icon_image == 'icon1.png')
+                    <a href="{{route('profile')}}"><img class="header_icon" src="{{ asset('images/' . Auth::user()->icon_image) }}"></a>
+                    @else
                     <a href="{{route('profile')}}"><img class="header_icon" src="{{ asset('storage/images/' . Auth::user()->icon_image) }}"></a>
+                    @endif
                 </div>
             </div>
         </div>

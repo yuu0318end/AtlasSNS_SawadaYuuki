@@ -12,7 +12,11 @@
 
 <div class="profile_container">
   <div>
+    @if(Auth::user()->icon_image == 'icon1.png')
+    <img class="icon-logo" src="{{ asset('images/' . Auth::user()->icon_image) }}">
+    @else
     <img class="icon-logo" src="{{ asset('storage/images/' . Auth::user()->icon_image) }}">
+    @endif
   </div>
     <form class="profile_wrapper" action="{{ route('profileUpdate') }}" method="post" enctype="multipart/form-data">
       @csrf

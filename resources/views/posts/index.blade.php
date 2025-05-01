@@ -12,7 +12,11 @@
 @endif
 
 <div class="container_post">
+  @if(Auth::user()->icon_image == 'icon1.png')
+  <img class="icon-logo" src="{{ asset('images/' . Auth::user()->icon_image) }}">
+  @else
   <img class="icon-logo" src="{{ asset('storage/images/' . Auth::user()->icon_image) }}">
+  @endif
   {{ Form::text('newPost',null,['required', 'class' => 'text_post', 'placeholder' => '投稿内容を入力してください。']) }}
   {{ Form::button('<img class="btn_post" src="images/post.png">',['type' => 'submit']) }}
 </div>
@@ -21,7 +25,11 @@
 <div class="post_read">
 @foreach($follow_post as $follow_posts)
 <ul>
+  @if($follow_posts->user->icon_image == 'icon1.png')
+  <li class="post_icon"><a href="{{ route('anotherProfile',$follow_posts->user->id) }}"><img class="icon-logo" src="{{asset('images/' . $follow_posts->user->icon_image)}}"></a></li>
+  @else
   <li class="post_icon"><a href="{{ route('anotherProfile',$follow_posts->user->id) }}"><img class="icon-logo" src="{{asset('storage/images/' . $follow_posts->user->icon_image)}}"></a></li>
+  @endif
   <div class="post_wrapper">
   <li class="post_username">{{$follow_posts->user->username}}</li>
   <li class="post_content">{{$follow_posts->post}}</li>
